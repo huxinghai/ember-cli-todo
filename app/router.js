@@ -8,7 +8,7 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('products', function() {
     this.route('new');
-    this.route('show');
+    this.route('show', {path: "/:id"});
   });
 });
 
