@@ -5,7 +5,7 @@ module.exports = function(environment) {
     modulePrefix: 'todo',
     environment: environment,
     baseURL: '/',
-    locationType: 'auto',
+    locationType: 'hash',
     contentSecurityPolicy: {
       'connect-src': "'self' * localhost:3000",
     },

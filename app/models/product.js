@@ -4,5 +4,6 @@ const { attr, belongsTo } = DS;
 
 export default DS.Model.extend({
   name: attr(),
-  title: attr()
+  price: attr('number', {defaultValue: 0}),
+  amount: attr('number', {defaultValue: 0})
 });

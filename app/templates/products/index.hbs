@@ -1,5 +1,21 @@
-<ul>
-{{#each model as |m|}}
-  <li>name: {{m.name}}, title: {{m.title}}</li>
-{{/each}}
-</ul>
+<table>
+  <thead>
+    <tr>
+      <th>名称</th>
+      <th>单价</th>
+      <th>数量</th>
+      <th>总额</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each model as |m|}}
+    <tr>
+      <td>{{m.name}}</td>
+      <td>{{m.price}}</td>
+      <td>{{m.amount}}</td>
+      <td>{{product-total m.price m.amount}}</td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+<a href="#/products/new">创建</a>
