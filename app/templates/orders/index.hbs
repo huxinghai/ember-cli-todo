@@ -1,0 +1,12 @@
+<ul>
+  {{#each model as |m|}}
+  <li>
+    <span>{{m.order_status}}</span>
+    <span>{{m.pay_status}}</span>
+    <span>{{m.amount}}</span>
+    <span>{{m.order_no}}</span>
+    <span><a href="#/orders/{{m.id}}">查看</a></span>
+  </li>
+  {{/each}}
+</ul>
+
