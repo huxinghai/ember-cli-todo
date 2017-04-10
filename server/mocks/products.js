@@ -1,5 +1,7 @@
-var fs = require('fs');
-var obj = JSON.parse(fs.readFileSync('/data/products.json', 'utf8'));
+var fs = require('fs'),
+  path = require('path');
+
+var products = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/products.json'), 'utf8'));
 
 /*jshint node:true*/
 module.exports = function(app) {

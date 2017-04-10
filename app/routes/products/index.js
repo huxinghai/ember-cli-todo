@@ -1,6 +1,9 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+  breadCrumb: {
+    title: "产品"
+  },
   queryParams: {
     page: { refreshModel: true },
     limit: { refreshModel: true }
