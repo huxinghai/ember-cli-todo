@@ -1,3 +1,6 @@
+var fs = require('fs');
+var obj = JSON.parse(fs.readFileSync('/data/products.json', 'utf8'));
+
 /*jshint node:true*/
 module.exports = function(app) {
   var express = require('express');
@@ -5,7 +8,7 @@ module.exports = function(app) {
 
   productsRouter.get('/', function(req, res) {
     res.send({
-      'products': []
+      'products': products
     });
   });
 
