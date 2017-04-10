@@ -7,7 +7,7 @@ module.exports = function(environment) {
     baseURL: '/',
     locationType: 'hash',
     contentSecurityPolicy: {
-      'connect-src': "'self' * localhost:3000",
+      'connect-src': "'self' * localhost:4200",
       'img-src': "'self' * data:",
       'style-src': "'self' 'unsafe-inline'"
     },
@@ -19,7 +19,7 @@ module.exports = function(environment) {
     }
   };
 
-  ENV.apiHost = "http://localhost:3000";
+  ENV.apiHost = "http://localhost4200";
   ENV.apiNamespace = "/api/v1";
 
   if (environment === 'development') {
