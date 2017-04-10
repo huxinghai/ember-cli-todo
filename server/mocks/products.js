@@ -43,5 +43,5 @@ module.exports = function(app) {
   // this mock uncommenting the following line:
   //
   //app.use('/api/products', require('body-parser'));
-  app.use('/api/products', productsRouter);
+  app.use('/api/v1/products', productsRouter);
 };

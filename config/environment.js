@@ -19,8 +19,8 @@ module.exports = function(environment) {
     }
   };
 
-  ENV.apiHost = "http://localhost4200";
-  ENV.apiNamespace = "/api/v1";
+  ENV.apiHost = "http://localhost:4200";
+  ENV.apiNamespace = "api/v1";
 
   if (environment === 'development') {
   }

@@ -1,9 +1,11 @@
 <div class="wrapper">
-  {{main-header}}      {{!-- templates/components/main-header --}}
-  {{main-sidebar}}     {{!-- templates/components/main-sidebar --}}
-  {{#content-wrapper}} {{!-- templates/components/content-wrapper --}}
+  {{main-header}}
+  {{main-sidebar}} 
+  {{#content-wrapper}}
     {{outlet}}
   {{/content-wrapper}}
-  {{main-footer}}      {{!-- templates/components/main-footer --}}
-  {{control-sidebar}}  {{!-- templates/components/control-sidebar --}}
+  {{main-footer}} 
+  {{control-sidebar}}
+  <div class="control-sidebar-bg"></div>
+  {{menu-navigation}}
 </div>
