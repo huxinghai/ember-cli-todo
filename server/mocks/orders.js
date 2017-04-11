@@ -6,19 +6,28 @@ var orders = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/orders.
 /*jshint node:true*/
 module.exports = function(app) {
   var express = require('express');
-  var productsRouter = express.Router();
+  var orderRouter = express.Router();
 
-  productsRouter.get('/', function(req, res) {
+  orderRouter.get('/', function(req, res) {
     res.send({
-      'orders': orders
+      code: 200,
+      data: {
+        total_pages: Math.ceil(orders.length/2)
+        total_count: orders.length,
+        page: 1,
+        rows: orders
+      }
     });
   });
 
-  productsRouter.post('/', function(req, res) {
-    res.status(201).end();
+  orderRouter.post('/', function(req, res) {
+    res.send({
+      code: 403,
+      msg: ["更新失败!"]
+    });
   });
 
-  productsRouter.get('/:id', function(req, res) {
+  orderRouter.get('/:id', function(req, res) {
     res.send({
       'orders': {
         id: req.params.id
@@ -26,7 +35,7 @@ module.exports = function(app) {
     });
   });
 
-  productsRouter.put('/:id', function(req, res) {
+  orderRouter.put('/:id', function(req, res) {
     res.send({
       'orders': {
         id: req.params.id
@@ -34,7 +43,7 @@ module.exports = function(app) {
     });
   });
 
-  productsRouter.delete('/:id', function(req, res) {
+  orderRouter.delete('/:id', function(req, res) {
     res.status(204).end();
   });
 
@@ -48,5 +57,5 @@ module.exports = function(app) {
   // this mock uncommenting the following line:
   //
   //app.use('/api/products', require('body-parser'));
-  app.use('/api/v1/orders', productsRouter);
+  app.use('/api/v1/orders', orderRouter);
 };
