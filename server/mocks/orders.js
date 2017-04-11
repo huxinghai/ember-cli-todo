@@ -12,7 +12,7 @@ module.exports = function(app) {
     res.send({
       code: 200,
       data: {
-        total_pages: Math.ceil(orders.length/2)
+        total_pages: Math.ceil(orders.length/2),
         total_count: orders.length,
         page: 1,
         rows: orders

@@ -7,5 +7,5 @@ export default DS.Model.extend({
   pay_status: attr(),
   amount: attr(),
   order_no: attr(),
-  product_no: belongsTo("product")
+  product: belongsTo("product")
 });
